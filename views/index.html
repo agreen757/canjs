@@ -1,0 +1,12 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet"/><link href="//code.famo.us/famous-angular/latest/famous-angular.min.css"/><script src="//code.jquery.com/jquery-1.10.1.min.js"></script><link href="//code.famo.us/famous-angular/latest/famous-angular.min.js"/><script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script><script src="//canjs.com/release/2.0.4/can.jquery.js"></script><script id="app-template" type="text/mustache"><div class="container"><div class="jumbotron"><h1><center>{{message}}<center></h1></div></div>
+</script><script id="second" type="text/mustache"><div class="container"><div class="row"><div style="background-color:#eee" class="col-md-6">{{info}}</div></div></div>
+</script><script id="twitter" type="text/mustache"><div class="container">
+    <div class="row">
+        {{#each tweet}}
+        <div class="col-md-6"><center>{{user}}</center> {{text}} </div>
+        {{/each}}
+    </div>
+</div>
+
+
+</script><div id="my-app"></div><div id="my-firstcontain"></div><div id="tweets"></div><script src="app/js/canjs.js"></script>
