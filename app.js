@@ -41,6 +41,6 @@ app.post('/tweets', function(req,res){
 })
 
 
-app.listen(3000,function(){
+app.listen(process.env.PORT,function(){
     console.log('started on 3000')
 })
