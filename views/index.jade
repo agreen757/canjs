@@ -1,32 +1,85 @@
 link(href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css", rel="stylesheet")
-link(href="//code.famo.us/famous-angular/latest/famous-angular.min.css")
+link(href="bower_components/animate.css/animate.css",rel="stylesheet")
+link(href="/app/css/style.css",rel="stylesheet")
+link(rel='stylesheet', href="/app/lib/owl-carousel/owl.carousel.css")
+link(rel='stylesheet', href="/app/lib/owl-carousel/owl.theme.css")
+link(rel='stylesheet', href="http://fonts.googleapis.com/css?family=Droid+Sans")
 
 script(src="//code.jquery.com/jquery-1.10.1.min.js")
-link(href="//code.famo.us/famous-angular/latest/famous-angular.min.js")
+script(src="/app/lib/owl-carousel/owl.carousel.js")
 script(src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js")
 script(src="//canjs.com/release/2.0.4/can.jquery.js")
 script#app-template(type="text/mustache").
-    <div class="container"><div class="jumbotron"><h1><center>{{message}}<center></h1></div></div>
+    <div class="container-fluid">
+        <div class="row">
+            <center>
+            <div id="roc">
+                
+            </div>
+            </center>
+        </div>
+    </div>
     
 script#second(type="text/mustache").
     <div class="container"><div class="row"><div style="background-color:#eee" class="col-md-6">{{info}}</div></div></div>
 
+
+
 script#twitter(type="text/mustache").
-    <div class="container">
-        <div class="row">
-            {{#each tweet}}
-            <div class="col-md-6"><center>{{user}}</center> {{text}} </div>
-            {{/each}}
+    <div id="owl-demo" class="owl-carousel owl-theme animated fadeInLeft">
+        {{#each tweet}}
+        <div class="item">
+            <div id="tweetsection">
+                <center>
+                    <img src={{image}} height="50" width="50">
+                </center>
+                <hr style="border-top: 1px solid black">
+                <center>
+                    <p style="font-size:1.2em;">{{text}}</p>
+                </center>
+            </div>
         </div>
+        {{/each}}
     </div>
 
-    
-
 #my-app
-#my-firstcontain
-#tweets
+.container-fluid
+    .row
+        .jumbotron
+            center
+                p.animated.fadeInUp(style="font-size:3em;") Salutations, Bitovi
+                br
+                p#info My name is <a href="http://adriangetsawesome.com">Adrian Green</a>, a web developer based in Brooklyn NY.
+                p(style="font-size:1.5em") I put together a simple twitter feed utilizing the Canjs framework
+
+
+//#my-firstcontain
+.container
+    .row
+        #tweets
+    //.row
+        .col-md-6#aboutme
+            p(style="font-size:2em;") Reporting for Duty
+            center
+                p(style="font-size:1.5em") I threw together this site using a Bootstrap frontend to get my head around working in the 
+                
+        //.col-md-6#aboutme
+            h3 I made a little demo in order to utilize your Canjs framework.  Your documentation is very thorough and I thank you for that.
+//#tweets
 
 
 script(src="app/js/canjs.js")
+script(type="text/javascript").
+    $(document).ready(function(){
+        setInterval(function(){
+            $("#owl-demo").owlCarousel({
+                  //autoPlay: 3000, //Set AutoPlay to 3 seconds
+                  items : 4,
+                  itemsDesktop : [1199,3],
+                  itemsDesktopSmall : [979,3]
+              });
+
+        },1000)
+      })
     
     

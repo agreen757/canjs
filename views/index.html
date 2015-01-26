@@ -1,12 +1,39 @@
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet"/><link href="//code.famo.us/famous-angular/latest/famous-angular.min.css"/><script src="//code.jquery.com/jquery-1.10.1.min.js"></script><link href="//code.famo.us/famous-angular/latest/famous-angular.min.js"/><script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script><script src="//canjs.com/release/2.0.4/can.jquery.js"></script><script id="app-template" type="text/mustache"><div class="container"><div class="jumbotron"><h1><center>{{message}}<center></h1></div></div>
-</script><script id="second" type="text/mustache"><div class="container"><div class="row"><div style="background-color:#eee" class="col-md-6">{{info}}</div></div></div>
-</script><script id="twitter" type="text/mustache"><div class="container">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet"/><link href="bower_components/animate.css/animate.css" rel="stylesheet"/><link href="/app/css/style.css" rel="stylesheet"/><link rel="stylesheet" href="/app/lib/owl-carousel/owl.carousel.css"/><link rel="stylesheet" href="/app/lib/owl-carousel/owl.theme.css"/><link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Droid+Sans"/><script src="//code.jquery.com/jquery-1.10.1.min.js"></script><script src="/app/lib/owl-carousel/owl.carousel.js"></script><script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script><script src="//canjs.com/release/2.0.4/can.jquery.js"></script><script id="app-template" type="text/mustache"><div class="container-fluid">
     <div class="row">
-        {{#each tweet}}
-        <div class="col-md-6"><center>{{user}}</center> {{text}} </div>
-        {{/each}}
+        <center>
+        <div id="roc">
+        
+        </div>
+        </center>
     </div>
 </div>
+</script><script id="second" type="text/mustache"><div class="container"><div class="row"><div style="background-color:#eee" class="col-md-6">{{info}}</div></div></div>
 
 
-</script><div id="my-app"></div><div id="my-firstcontain"></div><div id="tweets"></div><script src="app/js/canjs.js"></script>
+</script><script id="twitter" type="text/mustache"><div id="owl-demo" class="owl-carousel owl-theme animated fadeInLeft">
+    {{#each tweet}}
+    <div class="item">
+        <div id="tweetsection">
+            <center>
+                <img src={{image}} height="50" width="50">
+            </center>
+            <hr style="border-top: 1px solid black">
+            <center>
+                <p style="font-size:1.2em;">{{text}}</p>
+            </center>
+        </div>
+    </div>
+    {{/each}}
+</div>
+</script><div id="my-app"></div><div class="container-fluid"><div class="row"><div class="jumbotron"><center><p style="font-size:3em;" class="animated fadeInUp">Salutations, Bitovi</p><br/><p id="info">My name is <a href="http://adriangetsawesome.com">Adrian Green</a>, a web developer based in Brooklyn NY.</p><p style="font-size:1.5em">I put together a simple twitter feed utilizing the Canjs framework</p></center></div></div></div><!--#my-firstcontain--><div class="container"><div class="row"><div id="tweets"></div></div><!--.row<div id="aboutme" class="col-md-6"><p style="font-size:2em;">Reporting for Duty</p><center><p style="font-size:1.5em">I threw together this site using a Bootstrap frontend to get my head around working in the </p></center></div><!--.col-md-6#aboutme<h3>I made a little demo in order to utilize your Canjs framework.  Your documentation is very thorough and I thank you for that.</h3>-->--></div><!--#tweets--><script src="app/js/canjs.js"></script><script type="text/javascript">$(document).ready(function(){
+    setInterval(function(){
+        $("#owl-demo").owlCarousel({
+              //autoPlay: 3000, //Set AutoPlay to 3 seconds
+              items : 4,
+              itemsDesktop : [1199,3],
+              itemsDesktopSmall : [979,3]
+        });
+        
+    },1000)
+})
+</script>
